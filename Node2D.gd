@@ -91,32 +91,23 @@ func _process(delta):
 #		rotated += delta_rota
 	
 	
-	prints (
-		iter_of_frame,
-		"physic interpo fract :", Engine.get_physics_interpolation_fraction(),
-		"current_iter_tick :", current_iter_tick,
-		"frame_tick :", last_frame_tick, current_frame_tick,
-		"time_delta :", time_delta,
-		"smooth pos :",
-		tmp,
-		smooth_node.position,
-		smooth_node.position-tmp,
-		"kine pos", kinematic_node.position
-	)
+#	prints (
+#		iter_of_frame,
+#		"physic interpo fract :", Engine.get_physics_interpolation_fraction(),
+#		"current_iter_tick :", current_iter_tick,
+#		"frame_tick :", last_frame_tick, current_frame_tick,
+#		"time_delta :", time_delta,
+#		"smooth pos :",
+#		tmp,
+#		smooth_node.position,
+#		smooth_node.position-tmp,
+#		"kine pos", kinematic_node.position
+#	)
 	
 	iter_of_frame = 0
 	first_iter_of_frame = false
 		
-#	smooth_node.rotation = lerp_angle(smooth_node.rotation, kinematic_node.rotation, time_delta)
-#	prints (
-#			last_frame_tick,
-#			last_iter_tick,
-#			(last_frame_tick - last_iter_tick),
-#			Engine.iterations_per_second,
-#			time_delta,
-#			smooth_node.position)
 
-	
 
 
 func _physics_process(delta):
@@ -132,9 +123,6 @@ func _physics_process(delta):
 	previous_kinematic_rotation = kinematic_node.rotation
 
 	
-#	first_frame_of_iter = false
-#
-
 	
 #	self.angle += deg2rad( (Input.get_action_strength("ui_right")-Input.get_action_strength("ui_left"))*150*delta )  #1 degré en radian *3
 	var tmp_angle = angle + ( (Input.get_action_strength("ui_right")-Input.get_action_strength("ui_left"))*(TAU/2)*delta)  #1 degré en radian *3

@@ -8,6 +8,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Engine.iterations_per_second = 60
+	Engine.target_fps = 59
 	pass # Replace with function body.
 
 
